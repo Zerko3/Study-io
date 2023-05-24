@@ -15,6 +15,7 @@ const btnTwo = document.querySelector('.btn-two');
 const btnThree = document.querySelector('.btn-three');
 const btnFour = document.querySelector('.btn-four');
 const startButton = document.querySelector('.btn-start');
+const userMotivationPromt = document.getElementById('clock-promt');
 
 // Toggle dark mode
 const toggleDarkMode = function () {
@@ -69,6 +70,7 @@ const startTimer = function () {
   let min;
 
   if (timer.innerHTML === '15:00') {
+    userMotivationPromt.innerText = 'Good luck!';
     timer.classList.add('animated');
     btnOne.classList.add('hidden');
     btnTwo.classList.add('hidden');
@@ -79,6 +81,7 @@ const startTimer = function () {
       min--;
       if (min === 0) {
         clearInterval(coundown);
+        userMotivationPromt.innerText = '';
         timer.classList.remove('animated');
         btnOne.classList.remove('hidden');
         btnTwo.classList.remove('hidden');
@@ -95,6 +98,7 @@ const startTimer = function () {
       timer.innerHTML = formattedTime;
     }, 1000);
   } else if (timer.innerHTML === '25:00') {
+    userMotivationPromt.innerText = 'Good luck!';
     timer.classList.add('animated');
     btnOne.classList.add('hidden');
     btnTwo.classList.add('hidden');
@@ -105,6 +109,7 @@ const startTimer = function () {
       min--;
       if (min === 0) {
         clearInterval(coundown);
+        userMotivationPromt.innerText = '';
         timer.classList.remove('animated');
         btnOne.classList.remove('hidden');
         btnTwo.classList.remove('hidden');
@@ -121,6 +126,7 @@ const startTimer = function () {
       timer.innerHTML = formattedTime;
     }, 1000);
   } else if (timer.innerHTML === '45:00') {
+    userMotivationPromt.innerText = 'Good luck!';
     timer.classList.add('animated');
     btnOne.classList.add('hidden');
     btnTwo.classList.add('hidden');
@@ -131,6 +137,7 @@ const startTimer = function () {
       min--;
       if (min === 0) {
         clearInterval(coundown);
+        userMotivationPromt.innerText = '';
         timer.classList.remove('animated');
         btnOne.classList.remove('hidden');
         btnTwo.classList.remove('hidden');

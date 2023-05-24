@@ -98,6 +98,13 @@ input:checked[type='checkbox']::before {
   width: 100%;
 }
 
+.section--timer__clock--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .section--timer__break--container,
 .section--timer__choose__time--container {
   display: flex;
@@ -140,6 +147,12 @@ input:checked[type='checkbox']::before {
   font-size: 9.8rem;
   color: var(--text-color);
   margin-bottom: 2rem;
+}
+
+#clock-promt {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--text-color);
 }
 
 .section--timer__clock--container--clock::before {
