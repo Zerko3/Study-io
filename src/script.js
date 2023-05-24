@@ -10,7 +10,11 @@ const buttons = document.querySelector(
   '.section--timer__choose__time--container'
 );
 
-const date = new Date();
+const btnOne = document.querySelector('.btn-one');
+const btnTwo = document.querySelector('.btn-two');
+const btnThree = document.querySelector('.btn-three');
+const btnFour = document.querySelector('.btn-four');
+const startButton = document.querySelector('.btn-start');
 
 // Toggle dark mode
 const toggleDarkMode = function () {
@@ -21,7 +25,7 @@ const toggleDarkMode = function () {
   }
 };
 
-// Time function
+// Time display
 const timerCountdown = function (e) {
   const pressedButton = e.target.dataset.time;
 
@@ -29,9 +33,58 @@ const timerCountdown = function (e) {
 
   if (pressedButton === '15') {
     min = 15 * 60; //get seconds from minutes
+
+    let minutes = Math.floor(min / 60); //devide back to minutes for better display on the DOM
+    let seconds = min % 60; //to get seconds i need to check if there is any number left if i devide it by 60
+    let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`;
+
+    timer.innerHTML = formattedTime;
+  } else if (pressedButton === '25') {
+    min = 25 * 60;
+
+    let minutes = Math.floor(min / 60);
+    let seconds = min % 60;
+    let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`;
+
+    timer.innerHTML = formattedTime;
+  } else if (pressedButton === '45') {
+    min = 45 * 60;
+
+    let minutes = Math.floor(min / 60);
+    let seconds = min % 60;
+    let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`;
+
+    timer.innerHTML = formattedTime;
+  }
+};
+
+// Start time
+const startTimer = function () {
+  let min;
+
+  if (timer.innerHTML === '15:00') {
+    timer.classList.add('animated');
+    btnOne.classList.add('hidden');
+    btnTwo.classList.add('hidden');
+    btnThree.classList.add('hidden');
+    btnFour.classList.add('hidden');
+    min = 15 * 60; //get seconds from minutes
     const coundown = setInterval(function () {
       min--;
-      if (min === 0) clearInterval(coundown);
+      if (min === 0) {
+        clearInterval(coundown);
+        timer.classList.remove('animated');
+        btnOne.classList.remove('hidden');
+        btnTwo.classList.remove('hidden');
+        btnThree.classList.remove('hidden');
+        btnFour.classList.remove('hidden');
+      }
 
       let minutes = Math.floor(min / 60); //devide back to minutes for better display on the DOM
       let seconds = min % 60; //to get seconds i need to check if there is any number left if i devide it by 60
@@ -41,11 +94,23 @@ const timerCountdown = function (e) {
 
       timer.innerHTML = formattedTime;
     }, 1000);
-  } else if (pressedButton === '25') {
+  } else if (timer.innerHTML === '25:00') {
+    timer.classList.add('animated');
+    btnOne.classList.add('hidden');
+    btnTwo.classList.add('hidden');
+    btnThree.classList.add('hidden');
+    btnFour.classList.add('hidden');
     min = 25 * 60;
     const coundown = setInterval(function () {
       min--;
-      if (min === 0) clearInterval(coundown);
+      if (min === 0) {
+        clearInterval(coundown);
+        timer.classList.remove('animated');
+        btnOne.classList.remove('hidden');
+        btnTwo.classList.remove('hidden');
+        btnThree.classList.remove('hidden');
+        btnFour.classList.remove('hidden');
+      }
 
       let minutes = Math.floor(min / 60);
       let seconds = min % 60;
@@ -55,11 +120,23 @@ const timerCountdown = function (e) {
 
       timer.innerHTML = formattedTime;
     }, 1000);
-  } else if (pressedButton === '45') {
+  } else if (timer.innerHTML === '45:00') {
+    timer.classList.add('animated');
+    btnOne.classList.add('hidden');
+    btnTwo.classList.add('hidden');
+    btnThree.classList.add('hidden');
+    btnFour.classList.add('hidden');
     min = 45 * 60;
     const coundown = setInterval(function () {
       min--;
-      if (min === 0) clearInterval(coundown);
+      if (min === 0) {
+        clearInterval(coundown);
+        timer.classList.remove('animated');
+        btnOne.classList.remove('hidden');
+        btnTwo.classList.remove('hidden');
+        btnThree.classList.remove('hidden');
+        btnFour.classList.remove('hidden');
+      }
 
       let minutes = Math.floor(min / 60);
       let seconds = min % 60;
@@ -76,6 +153,7 @@ const timerCountdown = function (e) {
 const init = function () {
   toggleDarkModeButton.addEventListener('click', toggleDarkMode);
   buttons.addEventListener('click', timerCountdown);
+  startButton.addEventListener('click', startTimer);
 };
 
 init();
