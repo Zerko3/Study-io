@@ -34,6 +34,10 @@ body {
   background-color: var(--color-background);
 }
 
+.hidden {
+  display: none;
+}
+
 /* -------------- Navigation ------------------ */
 
 #navigation {
@@ -150,7 +154,7 @@ input:checked[type='checkbox']::before {
   z-index: -1;
 }
 
-.section--timer__clock--container--clock--animated::before {
+.animated::before {
   animation: backgroundAnimation 10s linear infinite;
 }
 
