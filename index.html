@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-light="light">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,6 +15,56 @@
     <title>Study-io</title>
   </head>
   <body>
-    <h1>Hello,World!</h1>
+    <header id="header">
+      <nav id="navigation">
+        <div class="navigation__logo">
+          <h2 class="heading--secondary">Study-io</h2>
+        </div>
+        <div class="navigation__toggle-dark-mode">
+          <input id="btn--toggle-dark-mode" type="checkbox" />
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="section--timer">
+        <!-- <div class="section--timer__break--container">
+          <button class="section--timer__break--container--btn">
+            Pomodoro
+          </button>
+          <button class="section--timer__break--container--btn">
+            Short break
+          </button>
+          <button class="section--timer__break--container--btn">
+            Long break
+          </button>
+        </div> -->
+
+        <div class="section--timer__clock--container">
+          <div class="section--timer__clock--container--clock">15:00</div>
+        </div>
+
+        <div class="section--timer__choose__time--container">
+          <button
+            data-time="15"
+            class="section--timer__choose__time--container--btn"
+          >
+            15:00
+          </button>
+          <button
+            data-time="25"
+            class="section--timer__choose__time--container--btn"
+          >
+            25:00
+          </button>
+          <button
+            data-time="45"
+            class="section--timer__choose__time--container--btn"
+          >
+            45:00
+          </button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
