@@ -175,3 +175,16 @@ input:checked[type='checkbox']::before {
     border-radius: 30% 70% 73% 27% / 30% 31% 69% 70%;
   }
 }
+
+/* ---------- Media Querie ----------- */
+
+@media screen and (max-width: 450px) {
+  .section--timer__clock--container--clock::before {
+    width: 43rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .section--timer__clock--container--clock::before {
+    left: -9rem;
+  }
+}
