@@ -112,6 +112,7 @@ input:checked[type='checkbox']::before {
   background-color: var(--color-primary);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-size: 1.8rem;
 }
 
 .section--timer__choose__time--container--btn:link,
@@ -121,6 +122,12 @@ input:checked[type='checkbox']::before {
 .section--timer__choose__time--container--btn:hover,
 .section--timer__choose__time--container--btn:active {
   background-color: var(--btn--hover);
+}
+
+.btn-start {
+  margin-top: 3rem;
+  width: 10rem;
+  font-size: 1.8rem;
 }
 
 .section--timer__clock--container--clock {

@@ -13,6 +13,7 @@ const toggleDarkMode = function () {
   }
 };
 
+// App initialization
 const init = function () {
   toggleDarkModeButton.addEventListener('click', toggleDarkMode);
 };
