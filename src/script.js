@@ -9,7 +9,6 @@ const timer = document.querySelector(
 const buttons = document.querySelector(
   '.section--timer__choose__time--container'
 );
-
 const btnOne = document.querySelector('.btn-one');
 const btnTwo = document.querySelector('.btn-two');
 const btnThree = document.querySelector('.btn-three');
@@ -17,7 +16,10 @@ const btnFour = document.querySelector('.btn-four');
 const startButton = document.querySelector('.btn-start');
 const userMotivationPromt = document.getElementById('clock-promt');
 
-// Toggle dark mode
+/**
+ * @description Function to toggle the dark mode
+ * @author Zerko
+ */
 const toggleDarkMode = function () {
   if (document.documentElement.getAttribute('data-theme') === 'light') {
     document.documentElement.setAttribute('data-theme', 'dark');
@@ -26,7 +28,12 @@ const toggleDarkMode = function () {
   }
 };
 
-// Time display
+/**
+ *
+ * @param {*} e
+ * @description Function gets the user click. Based on the click the correct timer is displayed on the DOM.
+ * @author Zerko
+ */
 const timerCountdown = function (e) {
   const pressedButton = e.target.dataset.time;
 
@@ -65,7 +72,10 @@ const timerCountdown = function (e) {
   }
 };
 
-// Start time
+/**
+ * @description The function is called when the user clickes on the start button. Once the button is pressed based on the timer on the DOM it start to count down till zero. It animates the background and hides or add the buttons.
+ * @author Zerko
+ */
 const startTimer = function () {
   let min;
 
